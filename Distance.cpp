@@ -11,6 +11,11 @@ Distance::Distance operator+(const Distance &obj)
 {
 this->feet += obj.feet;
 this->inches += obj.inches;
+if(inches>=12)
+{
+inches -=12;
+feet++;
+}
 return *this;
 }
 
