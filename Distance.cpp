@@ -7,7 +7,7 @@ std::cout << inches << " inches" << std::endl;
 }
 
 
-Distance::Distance operator+(const Distance &obj)
+Distance Distance::operator+(Distance obj)
 {
 this->feet += obj.feet;
 this->inches += obj.inches;
@@ -16,27 +16,27 @@ if(inches>=12)
 inches -=12;
 feet++;
 }
-return *this;
+return obj;
 }
 
-Distance::Distance operator-(const Distance &obj)
+Distance Distance::operator-(const Distance &obj)
 {
 this->feet -= obj.feet;
 this->inches -= obj.inches;
 return *this;
 }
-Distance::Distance operator*(const Distance &obj)
+Distance Distance::operator*(const Distance &obj)
 {
 this->feet *= obj.feet;
 this->inches *= obj.inches;
 return *this;
 }
-Distance::Distance operator/(const Distance &obj)
+Distance Distance::operator/(const Distance &obj)
 {
     if(obj.feet==0 || obj.inches==0)
     {
     std::cerr << "Devide by zero!" << std::endl;
-    return ;
+    return obj;
     }
     else
     {

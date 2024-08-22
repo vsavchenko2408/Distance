@@ -5,12 +5,12 @@ class Distance
 {
 private:
 unsigned int feet;
-unsigned float inches;
+float inches;
 public:
 Distance(): feet(0), inches(0) {}
-Distance(unsigned int _feet, unsigned float _inches): feet(_feet), inches(_inches) {}
+Distance(unsigned int _feet, float _inches): feet(_feet), inches(_inches) {}
 
-void set_distance(unsigned int feet, unsigned float inches)//add Distance
+void set_distance(unsigned int feet, float inches)//add Distance
 {
 this->feet = feet;
 this->inches = inches;
@@ -20,7 +20,7 @@ void show_distance(); //display Distance
 
 
 
-Distance operator+(const Distance &obj);
+Distance operator+(Distance obj);
 
 Distance operator-(const Distance &obj);
 
