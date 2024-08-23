@@ -20,9 +20,9 @@ void show_distance(); //display Distance
 
 
 
-Distance operator+(Distance obj);
+Distance operator+(const Distance &obj) const;
 
-Distance operator-(const Distance &obj);
+Distance operator-(const Distance &obj) const;
 
 Distance operator*(const Distance &obj);
 
