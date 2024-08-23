@@ -65,18 +65,28 @@ return Distance(tempfeets, tempinches);
 
 Distance Distance::operator/(const Distance &obj) const
 {
- /*
-    if(obj.feet==0 || obj.inches==0)
+    if (obj.feet == 0 && obj.inches == 0) 
     {
-    std::cerr << "Devide by zero!" << std::endl;
-    return obj;
+        std::cerr << "Divide by zero!" << std::endl;
+        return Distance(0, 0);
     }
-    else
-    {
-    this->feet /= obj.feet;
-    this->inches /= obj.inches;
-        */
-    return *this;
- //   }
 
+    if (obj.feet == 0) 
+    {
+        std::cerr << "Divide by zero in feet!" << std::endl;
+        return Distance(0, 0);
+    }
+
+    int tempfeets = feet / obj.feet;
+    float tempinches = inches / obj.inches;
+
+
+    if (tempinches >= 12) 
+    {
+        tempfeets += static_cast<int>(tempinches) / 12;
+        tempinches = static_cast<int>(tempinches) % 12 + (tempinches - static_cast<int>(tempinches));
+    }
+
+    return Distance(tempfeets, tempinches);
 }
+
