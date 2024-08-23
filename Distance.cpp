@@ -49,15 +49,23 @@ return Distance(tempfeets, tempinches);
     return Distance(0,0);
 }
 
-Distance Distance::operator*(const Distance &obj)
+Distance Distance::operator*(const Distance &obj) const
 {
-this->feet *= obj.feet;
-this->inches *= obj.inches;
-return *this;
+int tempfeets = 0;
+float tempinches = 0;
+
+tempfeets = feet * obj.feet;
+tempinches = inches * obj.inches;
+    if (tempinches >= 12) {
+        tempfeets += static_cast<int>(tempinches) / 12; 
+        tempinches = static_cast<int>(tempinches) % 12 + (tempinches - static_cast<int>(tempinches));
+    }
+return Distance(tempfeets, tempinches);
 }
 
-Distance Distance::operator/(const Distance &obj)
+Distance Distance::operator/(const Distance &obj) const
 {
+ /*
     if(obj.feet==0 || obj.inches==0)
     {
     std::cerr << "Devide by zero!" << std::endl;
@@ -67,6 +75,8 @@ Distance Distance::operator/(const Distance &obj)
     {
     this->feet /= obj.feet;
     this->inches /= obj.inches;
+        */
     return *this;
-    }
+ //   }
+
 }

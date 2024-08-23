@@ -24,9 +24,9 @@ Distance operator+(const Distance &obj) const;
 
 Distance operator-(const Distance &obj) const;
 
-Distance operator*(const Distance &obj);
+Distance operator*(const Distance &obj) const;
 
-Distance operator/(const Distance &obj);
+Distance operator/(const Distance &obj) const;
 
 
 };
