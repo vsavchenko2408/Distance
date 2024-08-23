@@ -18,6 +18,7 @@ this->inches = inches;
 
 void show_distance(); //display Distance
 
+void show_meter(); // display metr system
 
 
 Distance operator+(const Distance &obj) const;

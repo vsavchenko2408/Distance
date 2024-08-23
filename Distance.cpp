@@ -6,6 +6,13 @@ std::cout << feet << " feets" << std::endl;
 std::cout << inches << " inches" << std::endl;
 }
 
+void Distance::show_meter()
+{
+
+   float meter = (feet *12 + inches) * 0.0254;
+   std::cout << "In meter: " << meter << " m." << std::endl;
+}
+
 
 Distance Distance::operator+(const Distance &obj) const
 {

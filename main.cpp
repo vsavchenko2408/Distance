@@ -6,10 +6,10 @@ using std::cin;
 
 int main()
 {
-Distance d1(4,5),d2(3,6);
-Distance d3 = d1/d2;
-d1.show_distance();
-d2.show_distance();
-d3.show_distance();
+Distance d(4,5);
+
+d.show_distance();
+d.show_meter();
+
 return 0;
 }
